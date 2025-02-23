@@ -1,19 +1,24 @@
-// src/index.js
-import { faker } from "@faker-js/faker";
+const { faker } = require("@faker-js/faker");
 
-// Wait for DOM to be loaded
-document.addEventListener("DOMContentLoaded", () => {
+const mount = () => {
   let products = "";
 
   for (let i = 0; i < 50; i++) {
-    const name = faker.commerce.productName(); // Changed from getProductName to productName
-    products += `<div>${name}</div>`;
+    const name = faker.commerce.productName();
+    products += `<div>${name}</div>`; // Fixed template literal syntax
   }
 
-  const container = document.querySelector("#dev-products");
-  if (container) {
-    container.innerHTML = products;
-  } else {
-    console.error("Container #dev-products not found");
+  // Return the mount function
+  return products;
+};
+
+// Situational mounting logic
+if (process.env.NODE_ENV === "development") {
+  const el = document.querySelector("#dev-products");
+  if (el) {
+    el.innerHTML = mount();
   }
-});
+}
+
+// Export mount function
+export default { mount };
