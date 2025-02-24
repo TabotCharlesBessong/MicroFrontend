@@ -1,10 +1,4 @@
-const { mount } = require("products/ProductsIndex");
+import 'products/ProductsIndex';
+import 'cart/CartShow';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const el = document.querySelector("#dev-products");
-  if (el) {
-    el.innerHTML = mount();
-  }
-});
-
-console.log("Container initialized");
+console.log('Container!');
