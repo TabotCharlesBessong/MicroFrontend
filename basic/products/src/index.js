@@ -9,6 +9,8 @@ const mount = () => {
   }
 
   // Return the mount function
+  console.log(product);
+  
   return products;
 };
 
@@ -21,4 +23,4 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Export mount function
-export default { mount };
+module.exports = { mount };
