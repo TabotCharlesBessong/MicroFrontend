@@ -1,4 +1,9 @@
 {
+	"name": "marketing",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "webpack serve --config config/webpack.dev.js"
+	},
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
