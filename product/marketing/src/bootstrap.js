@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import App from "./App";
 
 // Mount function to start up the app
 const mount = (el) => {
@@ -9,7 +10,7 @@ const mount = (el) => {
   }
 
   const root = ReactDOM.createRoot(el);
-  root.render(<h1>Hello, React!</h1>);
+  root.render(<App />);
 };
 
 // If we are in development and in isolated mode, mount immediately
